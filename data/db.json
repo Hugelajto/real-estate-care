@@ -1,0 +1,35 @@
+{
+    "inspections": [
+  {
+    "id": 1,
+    "date": "2024-09-13",
+    "location": "123 Elm St.",
+    "description": "Inspection of living room and kitchen."
+  },
+  {
+    "id": 2,
+    "date": "2024-09-14",
+    "location": "456 Oak St.",
+    "description": "Inspection of bedrooms and bathrooms."
+  },
+  {
+    "id": 3,
+    "date": "2024-09-15",
+    "location": "789 Pine St.",
+    "description": "Inspection of exterior and roof."
+  },
+  {
+    "id": 4,
+    "date": "2024-09-12",
+    "location": "101 Maple St.",
+    "description": "Inspection of basement and attic."
+  },
+  {
+    "id": 5,
+    "date": "2024-09-11",
+    "location": "202 Birch St.",
+    "description": "Inspection of garage and garden."
+  }
+    ]
+  }
+  
