@@ -1,26 +1,23 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <v-app>
+    <DashBoard />
+    <v-main>
+      <!-- Ensure HomePage is centered within v-main -->
+      <HomePage />
+    </v-main>
+    <FooterNavigation />
+  </v-app>
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+<script setup>
+import DashBoard from './components/DashBoard.vue';
+import HomePage from './components/HomePage.vue';
+import FooterNavigation from './components/FooterNavigation.vue'
 </script>
 
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.v-main {
+background-color: rgba(0, 170, 162);
 }
 </style>
