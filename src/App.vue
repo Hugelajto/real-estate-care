@@ -2,7 +2,6 @@
   <v-app>
     <DashBoard />
     <v-main>
-      <!-- Ensure HomePage is centered within v-main -->
       <HomePage />
     </v-main>
     <FooterNavigation />

@@ -1,13 +1,11 @@
 <template>
     <div>
-      <!-- App Bar -->
       <v-app-bar class="gradient-app-bar" prominent>
         <v-app-bar-nav-icon @click.stop="drawer = !drawer" class="text-white"></v-app-bar-nav-icon>
         <v-toolbar-title class="text-white">Menu</v-toolbar-title>
         <v-spacer></v-spacer>
       </v-app-bar>
-  
-      <!-- Navigation Drawer -->
+
       <v-navigation-drawer v-model="drawer" :location="$vuetify.display.mobile ? 'bottom' : 'start'" temporary>
         <v-list>
           <v-list-item-group v-model="selectedItem">
