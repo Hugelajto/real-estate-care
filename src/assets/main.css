@@ -48,6 +48,14 @@
   color: red;
 }
 
+.text-h6 {
+  font-size: 1rem;
+}
+
+.text-body-1 {
+  font-size: 1rem;
+}
+
 .gradient-app-bar {
   background: linear-gradient(
     to right,

@@ -97,12 +97,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.text-h6 {
-  font-size: 1rem;
-}
-.text-body-1 {
-  font-size: 1rem;
-}
-</style>
