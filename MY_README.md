@@ -63,10 +63,6 @@ To ensure the protection of user information, I implemented a robust authenticat
 
 The authentication process verifies user credentials against stored data, ensuring that only authorized individuals can access the application. This involves checking the username and password against a local JSON server that simulates a database, enhancing security by not exposing sensitive data.
 
-### Remember Me Functionality
-
-I incorporated a 'Remember Me' checkbox during the login process, allowing returning users to save their username for future logins. This improves user experience while ensuring that sensitive information is stored securely in local storage, rather than hard-coded or exposed in the application.
-
 ### Mitigating XSS Attacks
 
 To protect against Cross-Site Scripting (XSS) attacks, I employed Vue's double curly bracket syntax for data binding within the HTML templates. This practice effectively escapes HTML content, preventing script injections and safeguarding user input.
