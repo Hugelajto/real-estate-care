@@ -1,6 +1,6 @@
 export const fetchInspections = async () => {
   try {
-    const response = await fetch('https://raw.githubusercontent.com/Hugelajto/realestatecare-data/main/db.json');
+    const response = await fetch('http://localhost:3000/inspections');
     if (!response.ok) {
       throw new Error('Network response was not ok');
     }

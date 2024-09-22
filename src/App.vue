@@ -1,22 +1,32 @@
 <template>
   <v-app>
-    <DashBoard />
+    <DashBoard v-if="isAuthenticated" />
+
     <v-main>
-      <HomePage />
+      <v-container>
+        <router-view />
+      </v-container>
     </v-main>
-    <FooterNavigation />
+
+    <FooterNavigation v-if="isAuthenticated" />
   </v-app>
 </template>
 
-<script setup>
-import DashBoard from './components/DashBoard.vue';
-import HomePage from './components/HomePage.vue';
-import FooterNavigation from './components/FooterNavigation.vue'
+<script>
+import DashBoard from "./components/layout/Dashboard.vue";
+import FooterNavigation from "./components/layout/FooterNavigation.vue";
+import { computed } from "vue";
+import { useUserStore } from "@/stores/UserStore";
+
+export default {
+  components: { DashBoard, FooterNavigation },
+  setup() {
+    const userStore = useUserStore();
+    const isAuthenticated = computed(() => !!userStore.currentUser);
+
+    return {
+      isAuthenticated,
+    };
+  },
+};
 </script>
-
-
-<style>
-.v-main {
-background-color: rgba(0, 170, 162);
-}
-</style>

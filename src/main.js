@@ -1,10 +1,19 @@
-import { createApp } from 'vue'
-import App from './App.vue'
-import vuetify from './plugins/vuetify'
-import { loadFonts } from './plugins/webfontloader'
+import "./assets/main.css";
 
-loadFonts()
+import { createApp } from "vue";
+import App from "./App.vue";
+import { createVuetify } from "vuetify";
+import "vuetify/styles";
+import router from "./router";
+import "@mdi/font/css/materialdesignicons.css";
+import { createPinia } from "pinia";
 
-createApp(App)
-  .use(vuetify)
-  .mount('#app')
+const vuetify = createVuetify();
+
+const app = createApp(App);
+
+app.use(vuetify);
+app.use(createPinia());
+app.use(router);
+
+app.mount("#app");

@@ -1,0 +1,92 @@
+.v-main {
+  background-color: rgba(0, 170, 162);
+  min-height: 100vh;
+}
+
+.v-card {
+  background-color: #fff;
+  margin: 2em;
+}
+
+.white {
+  max-width: 400px;
+  margin: auto;
+  padding: 16px;
+}
+
+.v-text-field,
+.v-textarea {
+  margin-bottom: 16px;
+}
+
+.v-btn {
+  margin: 0.5em;
+}
+
+.v-btn.btn-edit {
+  background-color: rgba(0, 170, 162, 0.5);
+}
+
+.v-btn.btn-del {
+  background-color: #ff2400;
+}
+
+.v-list {
+  border-radius: 10px;
+}
+
+.completed {
+  color: rgb(8, 91, 8);
+}
+
+.notification {
+  color: green;
+  margin-top: 10px;
+}
+
+.login-notification {
+  color: red;
+}
+
+.gradient-app-bar {
+  background: linear-gradient(
+    to right,
+    rgba(71, 94, 108),
+    rgba(20, 27, 31)
+  ) !important;
+}
+
+.white-icons .v-icon {
+  color: #ffffff;
+}
+
+h1 {
+  color: rgba(41, 52, 57);
+}
+
+p {
+  color: rgba(0, 170, 162);
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .v-img {
+    max-height: 40px;
+  }
+
+  .v-btn {
+    min-width: 40px;
+    margin: 0 5px;
+  }
+
+  .v-col {
+    flex-basis: 100%;
+  }
+}
