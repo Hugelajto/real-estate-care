@@ -1,6 +1,12 @@
 # Real Estate Care
 
+<<<<<<< HEAD
 For demo login: Username: admin Password: admin123
+=======
+For demo login:
+Username: admin
+Password: admin123
+>>>>>>> e0b2c3f2a847927e8ab6d79c47fef1cae3468a6a
 
 This project is a mobile application for Real Estate Care, developed based on the specifications outlined in the assignment.
 
