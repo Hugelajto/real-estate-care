@@ -1,5 +1,4 @@
 import { defineStore } from "pinia";
-import { fetchInspections } from "@/services/InspectionService";
 
 export const inspection_types = {
   DAMAGE: "Damage",
@@ -134,15 +133,19 @@ export const useInspectionStore = defineStore("inspectionStore", {
       return formFieldDefinitions[this.inspectionType] || [];
     },
   },
-
   actions: {
     async loadInspections() {
       this.loading = true;
       this.error = null;
 
       try {
-        this.inspections = await fetchInspections();
-      } catch {
+        const response = await fetch("http://localhost:3000/inspections");
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        const data = await response.json();
+        this.inspections = data;
+      } catch (error) {
         this.error = "Failed to load inspections";
       } finally {
         this.loading = false;
@@ -156,6 +159,23 @@ export const useInspectionStore = defineStore("inspectionStore", {
         reader.onerror = reject;
         reader.readAsDataURL(imageFile);
       });
+    },
+
+    resetStoreState() {
+      this.inspectionType = inspection_types.DAMAGE;
+      this.location = "";
+      this.image = null;
+      this.documentation = null;
+      this.damageType = "";
+      this.maintenanceType = "";
+      this.urgent = "";
+      this.cost = "";
+      this.remarks = "";
+      this.performedBy = "";
+      this.action = "";
+      this.description = "";
+      this.damageDate = "";
+      this.new = "";
     },
 
     async addInspection(inspection) {
@@ -197,7 +217,8 @@ export const useInspectionStore = defineStore("inspectionStore", {
     },
 
     async getInspection(id) {
-      return this.inspections.find((i) => i.id === id) || null;
+      const inspection = this.inspections.find((i) => i.id === id);
+      return inspection || null;
     },
 
     async deleteReport(id) {

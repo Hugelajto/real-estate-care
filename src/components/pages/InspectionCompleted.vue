@@ -50,9 +50,9 @@
 <script>
 import { computed, onMounted } from "vue";
 import { useInspectionStore } from "@/stores/InspectionStore";
-import BackButton from "./buttons/ButtonBack.vue";
-import ButtonNewReport from "./buttons/ButtonNewReport.vue";
-import ButtonDelete from "./buttons/ButtonDelete.vue";
+import BackButton from "../buttons/ButtonBack.vue";
+import ButtonNewReport from "../buttons/ButtonNewReport.vue";
+import ButtonDelete from "../buttons/ButtonDelete.vue";
 
 export default {
   components: {

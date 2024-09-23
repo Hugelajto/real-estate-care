@@ -1,11 +1,11 @@
 import { createRouter, createWebHistory } from "vue-router";
-import InspectationAssigned from "@/components/InspectionAssigned.vue";
-import InspectationCompleted from "@/components/InspectionCompleted.vue";
-import InspectationDocumentation from "@/components/InspectionDocumentation.vue";
+import InspectationAssigned from "@/components/pages/InspectionAssigned.vue";
+import InspectationCompleted from "@/components/pages/InspectionCompleted.vue";
+import InspectationDocumentation from "@/components/pages/InspectionDocumentation.vue";
 import Settings from "@/components/Settings.vue";
-import InspectionForm from "@/components/InspectionForm.vue";
-import InspectationEdit from "@/components/InspectionEdit.vue";
-import InspectatioinView from "@/components/InspectionView.vue";
+import InspectionForm from "@/components/pages/InspectionForm.vue";
+import InspectationEdit from "@/components/pages/InspectionEdit.vue";
+import InspectatioinView from "@/components/pages/InspectionView.vue";
 import Login from "@/components/Login.vue";
 import { useUserStore } from "@/stores/UserStore";
 

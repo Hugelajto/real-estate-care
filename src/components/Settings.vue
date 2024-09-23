@@ -98,10 +98,3 @@ export default {
   },
 };
 </script>
-
-<style>
-.notification {
-  color: green;
-  margin-top: 10px;
-}
-</style>

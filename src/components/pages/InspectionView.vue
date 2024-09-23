@@ -59,7 +59,7 @@
 import { computed, onMounted } from "vue";
 import { useInspectionStore } from "@/stores/InspectionStore";
 import { useRouter, useRoute } from "vue-router";
-import BackButton from "./buttons/ButtonBack.vue";
+import BackButton from "../buttons/ButtonBack.vue";
 
 export default {
   components: { BackButton },

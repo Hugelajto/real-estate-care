@@ -22,8 +22,14 @@
         <v-list-item-content>
           <v-list-item-title>
             <v-icon>mdi-file-document</v-icon>
-            {{ inspection.location }}</v-list-item-title
+            {{ inspection.inspectionType }}</v-list-item-title
           >
+          <v-list-item-subtitle>
+            {{ inspection.location }}
+          </v-list-item-subtitle>
+          <v-list-item-subtitle>
+            {{ inspection.description }}
+          </v-list-item-subtitle>
           <v-btn
             class="btn-edit"
             :to="{ name: 'edit', params: { id: inspection.id } }"
@@ -45,9 +51,9 @@
 <script>
 import { computed, onMounted } from "vue";
 import { useInspectionStore } from "@/stores/InspectionStore";
-import ButtonNewReport from "./buttons/ButtonNewReport.vue";
-import ButtonDelete from "./buttons/ButtonDelete.vue";
-import ButtonBack from "./buttons/ButtonBack.vue";
+import ButtonNewReport from "../buttons/ButtonNewReport.vue";
+import ButtonDelete from "../buttons/ButtonDelete.vue";
+import ButtonBack from "../buttons/ButtonBack.vue";
 
 export default {
   components: {

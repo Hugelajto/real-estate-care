@@ -89,10 +89,10 @@
 </template>
 
 <script>
-import { computed, ref } from "vue";
+import { computed, ref, onBeforeMount } from "vue";
 import { useInspectionStore } from "@/stores/InspectionStore";
 import { useRouter } from "vue-router";
-import BackButton from "./buttons/ButtonBack.vue";
+import BackButton from "../buttons/ButtonBack.vue";
 
 export default {
   components: { BackButton },
@@ -100,6 +100,11 @@ export default {
     const store = useInspectionStore();
     const router = useRouter();
     const isSubmitting = ref(false);
+    const form = ref(null);
+
+    onBeforeMount(() => {
+      store.resetStoreState();
+    });
 
     const formFields = computed(() => store.formFields);
 
@@ -127,6 +132,27 @@ export default {
       }
     };
 
+    const resetForm = () => {
+      store.inspectionType = "";
+      store.location = "";
+      store.image = null;
+      store.documentation = "";
+      store.damageType = "";
+      store.maintenanceType = "";
+      store.urgent = "";
+      store.cost = "";
+      store.remarks = "";
+      store.performedBy = "";
+      store.action = "";
+      store.description = "";
+      store.damageDate = "";
+      store.new = "";
+
+      if (form.value) {
+        form.value.reset();
+      }
+    };
+
     const submit = async () => {
       const requiredFields = formFields.value.filter((field) => field.required);
       const isValid = requiredFields.every((field) => !!store[field.model]);
@@ -140,15 +166,25 @@ export default {
         inspectionType: store.inspectionType,
         location: store.location,
         image: store.image,
-        document: store.documentation,
+        documentation: store.documentation,
+        new: store.new,
+        urgent: store.urgent,
+        cost: store.cost,
+        action: store.action,
+        remarks: store.remarks,
+        damageType: store.damageType,
+        damageDate: store.damageDate,
+        description: store.description,
+        performedBy: store.performedBy,
+        maintenanceType: store.maintenanceType,
       };
 
       try {
         isSubmitting.value = true;
         await store.addInspection(inspectionData);
+        resetForm();
         router.push("/assigned");
       } catch (error) {
-        console.error("Error submitting form:", error);
         alert("Error submitting form. Please try again.");
       } finally {
         isSubmitting.value = false;
@@ -163,6 +199,8 @@ export default {
       isSubmitting,
       handlePdfChange,
       imageUrl,
+      form,
+      resetForm,
     };
   },
 };
